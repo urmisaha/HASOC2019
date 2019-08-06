@@ -21,17 +21,19 @@ classifier.fit(Train_X_Tfidf,Train_Y1)
 
 predictions_RF = classifier.predict(Test_X_Tfidf)
 
-# Use score functions
-print("RF Scores")
-print("Task 1:")
-print("Accuracy")
-print(accuracy_score(predictions_RF, Test_Y1)*100)
-print("Precision recall fscore")
-print(precision_recall_fscore_support(Test_Y1, predictions_RF))
-print("Classification Report")
-print(classification_report(Test_Y1, predictions_RF))
+f = open("results/eng-results_RF.txt", "w+")
 
-print("----------------------------------------------------------------------------")
+# Use score functions
+f.write("\nRF Scores\n")
+f.write("\nTask 1:\n")
+f.write("\nAccuracy\n")
+f.write(str(accuracy_score(predictions_RF, Test_Y1)*100))
+f.write("\nPrecision recall fscore\n")
+f.write(str(precision_recall_fscore_support(Test_Y1, predictions_RF)))
+f.write("\nClassification Report\n")
+f.write(str(classification_report(Test_Y1, predictions_RF)))
+
+f.write("\n----------------------------------------------------------------------------\n")
 
 # Task 2
 classifier.fit(Train_X_Tfidf,Train_Y2)
@@ -39,16 +41,16 @@ classifier.fit(Train_X_Tfidf,Train_Y2)
 predictions_RF = classifier.predict(Test_X_Tfidf)
 
 # Use score functions
-print("RF Scores")
-print("Task 2:")
-print("Accuracy")
-print(accuracy_score(predictions_RF, Test_Y2)*100)
-print("Precision recall fscore")
-print(precision_recall_fscore_support(Test_Y2, predictions_RF))
-print("Classification Report")
-print(classification_report(Test_Y2, predictions_RF))
+f.write("\nRF Scores\n")
+f.write("\nTask 2:\n")
+f.write("\nAccuracy\n")
+f.write(str(accuracy_score(predictions_RF, Test_Y2)*100))
+f.write("\nPrecision recall fscore\n")
+f.write(str(precision_recall_fscore_support(Test_Y2, predictions_RF)))
+f.write("\nClassification Report\n")
+f.write(str(classification_report(Test_Y2, predictions_RF)))
 
-print("----------------------------------------------------------------------------")
+f.write("\n----------------------------------------------------------------------------\n")
 
 # Task 3
 classifier.fit(Train_X_Tfidf,Train_Y3)
@@ -56,13 +58,15 @@ classifier.fit(Train_X_Tfidf,Train_Y3)
 predictions_RF = classifier.predict(Test_X_Tfidf)
 
 # Use score functions
-print("RF Scores")
-print("Task 3:")
-print("Accuracy")
-print(accuracy_score(predictions_RF, Test_Y3)*100)
-print("Precision recall fscore")
-print(precision_recall_fscore_support(Test_Y3, predictions_RF))
-print("Classification Report")
-print(classification_report(Test_Y3, predictions_RF))
+f.write("\nRF Scores\n")
+f.write("\nTask 3:\n")
+f.write("\nAccuracy\n")
+f.write(str(accuracy_score(predictions_RF, Test_Y3)*100))
+f.write("\nPrecision recall fscore\n")
+f.write(str(precision_recall_fscore_support(Test_Y3, predictions_RF)))
+f.write("\nClassification Report\n")
+f.write(str(classification_report(Test_Y3, predictions_RF)))
 
-print("----------------------------------------------------------------------------")
+f.write("\n----------------------------------------------------------------------------\n")
+
+f.close()
